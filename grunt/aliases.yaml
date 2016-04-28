@@ -19,5 +19,4 @@ prod:
 report:
   description: 'Styles reporting'
   tasks:
-    - 'csscss'
     - 'stylestats'
