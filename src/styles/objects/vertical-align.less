@@ -1,0 +1,84 @@
+/**
+ * objects/vertical-align.less
+ */
+
+/* ==========================================================================
+   Vertical align
+   ========================================================================== */
+
+/**
+ * Reference: http://css-tricks.com/centering-in-the-unknown/
+ *
+ * Usage:
+ *
+ * <div class='valign'>
+ *     <div class='valign__content--middle'>
+ *         <!-- Content -->
+ *     </div>
+ * </div>
+ *
+ * @note Parent element must have position relative
+ */
+
+/* Mixins
+   ========================================================================== */
+
+.inline-block() {
+  display: inline-block !important;
+  *display: inline; // IE<8
+  zoom: 1; // IE<8
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+/* Wrapper
+   ========================================================================== */
+
+.valign {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+/* Pseudo element to center on */
+
+.valign:before {
+  .inline-block;
+  content: '';
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -0.25em;
+}
+
+/* Top
+   ========================================================================== */
+
+/* Content element */
+
+.valign__content--top {
+  .inline-block;
+  width: 100%;
+  vertical-align: top;
+}
+
+/* Middle
+   ========================================================================== */
+
+/* Content element */
+
+.valign__content--middle {
+  .inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+/* Bottom
+   ========================================================================== */
+
+/* Content element */
+
+.valign__content--bottom {
+  .inline-block;
+  width: 100%;
+  vertical-align: bottom;
+}

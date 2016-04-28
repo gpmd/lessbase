@@ -1,0 +1,40 @@
+/**
+ * objects/margin.less
+ */
+
+/* ==========================================================================
+   Margin
+   ========================================================================== */
+
+/* Margin vars
+   ========================================================================== */
+
+@array: zero 0,
+        sml 0.5em,
+        med 1em,
+        lrg 2em;
+
+/* Generate margin
+   ========================================================================== */
+
+/**
+ * Auto generate margin selectors
+ */
+
+.creatmarginclasses(@iterator:1) when(@iterator <= length(@array)) {
+  @name: extract(extract(@array, @iterator),1);
+
+  .margin-right--@{name} { margin-right: extract(extract(@array, @iterator),2) !important; }
+  .margin-bottom--@{name} { margin-bottom: extract(extract(@array, @iterator),2) !important; }
+  .margin-left--@{name} { margin-left: extract(extract(@array, @iterator),2) !important; }
+  .margin-top--@{name} { margin-top: extract(extract(@array, @iterator),2) !important; }
+  .margin-horizontal--@{name} { margin: 0 extract(extract(@array, @iterator),2) !important; }
+  .margin-vertical--@{name} { margin: extract(extract(@array, @iterator),2) 0 !important; }
+  .margin-all--@{name} { margin: extract(extract(@array, @iterator),2) !important; }
+  
+  .creatmarginclasses((@iterator + 1));
+}
+
+// The end parenthesis means the mixin class itself will not be output
+// http://lesscss.org/features/#mixins-feature-not-outputting-the-mixin
+.creatmarginclasses();

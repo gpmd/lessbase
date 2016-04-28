@@ -1,0 +1,9 @@
+# System and editor files
+.DS_Store
+*.sublime-*
+.idea
+
+# Directories
+bower_components/
+dist/
+node_modules/

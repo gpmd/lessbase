@@ -1,0 +1,23 @@
+default:
+  description: 'Default (production) build'
+  tasks:
+    - dev
+dev:
+  description: 'Development build'
+  tasks:
+    - 'concurrent:devFirst'
+    - 'concurrent:devSecond'
+    - 'concurrent:devThird'
+    - 'report'
+prod:
+  description: 'Production build'
+  tasks:
+    - 'concurrent:prodFirst'
+    - 'concurrent:prodSecond'
+    - 'concurrent:prodThird'
+    - 'concurrent:prodFourth'
+report:
+  description: 'Styles reporting'
+  tasks:
+    - 'csscss'
+    - 'stylestats'

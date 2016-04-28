@@ -1,0 +1,27 @@
+/**
+ * objects/columns.less
+ */
+
+/* ==========================================================================
+   Column Count
+   ========================================================================== */
+
+/* Default values
+   ========================================================================== */
+
+[class*='columns'] { column-gap: (@gutter * 2); }
+
+.columns--2 { columns: 1; }
+.columns--4 { columns: 1; }
+
+/* Media queries
+   ========================================================================== */
+
+.bp-more-than(@small-screen-min; {
+  .columns--2,
+  .columns--4 { columns: 2; }
+});
+
+.bp-more-than(@large-screen-min; {
+  .columns--4 { columns: 4; }
+});

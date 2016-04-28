@@ -1,0 +1,35 @@
+/**
+ * tools/media-queries.less
+ */
+
+/* ==========================================================================
+   Media Queries
+   ========================================================================== */
+
+// Usage:
+// .my-selector {
+//   .bp-more-than(@small-screen-max; {
+//     width: 100%;
+//   });
+// }
+
+/* Less than (max-width)
+   ========================================================================== */
+
+.bp-less-than(@bp, @rules) {
+  @media all and (max-width: @bp) { @rules(); }
+}
+
+/* More than (min-width)
+   ========================================================================== */
+
+.bp-more-than(@bp, @rules) {
+  @media all and (min-width: @bp) { @rules(); }
+}
+
+/* Between (min-width and max-width)
+   ========================================================================== */
+
+.bp-between(@bp-from, @bp-to, @rules) {
+  @media all and (min-width: @bp-from) and (max-width: @bp-to) { @rules(); }
+}

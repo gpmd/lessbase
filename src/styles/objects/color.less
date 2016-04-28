@@ -1,0 +1,38 @@
+/**
+ * objects/color.less
+ */
+
+/* ==========================================================================
+   Color
+   ========================================================================== */
+
+/* Color vars
+   ========================================================================== */
+
+@array: black @black,
+        white @white,
+        light-grey @grey-light,
+        medium-grey @grey-medium,
+        dark-grey @grey-dark,
+        darkest-grey @grey-darkest;
+
+/* Generate colors
+   ========================================================================== */
+
+/**
+ * Auto generate color, background-color and border-color selectors
+ */
+
+.creatcolourclasses(@iterator:1) when(@iterator <= length(@array)) {
+  @name: extract(extract(@array, @iterator),1);
+
+  .color--@{name} { color: extract(extract(@array, @iterator),2); }
+  .background-color--@{name} { background-color: extract(extract(@array, @iterator),2); }
+  .border-color--@{name} { border-color: extract(extract(@array, @iterator),2); }
+
+  .creatcolourclasses((@iterator + 1));
+}
+
+// The end parenthesis means the mixin class itself will not be output
+// http://lesscss.org/features/#mixins-feature-not-outputting-the-mixin
+.creatcolourclasses();
