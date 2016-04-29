@@ -9,12 +9,13 @@
 /* Margin vars
    ========================================================================== */
 
-@array: none 0,
-        @size-mod-xs 0.5em,
-        @size-mod-s 1em,
-        @size-mod-m 2em,
-        @size-mod-l 4em,
-        @size-mod-xl 8em;
+@margin-array:
+  none 0,
+  @size-mod-xs 0.5em,
+  @size-mod-s 1em,
+  @size-mod-m 2em,
+  @size-mod-l 4em,
+  @size-mod-xl 8em;
 
 /* Generate margin
    ========================================================================== */
@@ -23,18 +24,18 @@
  * Auto generate margin selectors
  */
 
-.creatmarginclasses(@iterator:1) when(@iterator <= length(@array)) {
-  @name: extract(extract(@array, @iterator),1);
+.creatmarginclasses(@margin-iterator:1) when(@margin-iterator <= length(@margin-array)) {
+  @margin-name: extract(extract(@margin-array, @margin-iterator),1);
 
-  .margin-right--@{name} { margin-right: extract(extract(@array, @iterator),2) !important; }
-  .margin-bottom--@{name} { margin-bottom: extract(extract(@array, @iterator),2) !important; }
-  .margin-left--@{name} { margin-left: extract(extract(@array, @iterator),2) !important; }
-  .margin-top--@{name} { margin-top: extract(extract(@array, @iterator),2) !important; }
-  .margin-horizontal--@{name} { margin: 0 extract(extract(@array, @iterator),2) !important; }
-  .margin-vertical--@{name} { margin: extract(extract(@array, @iterator),2) 0 !important; }
-  .margin-all--@{name} { margin: extract(extract(@array, @iterator),2) !important; }
+  .margin-right--@{margin-name} { margin-right: extract(extract(@margin-array, @margin-iterator),2) !important; }
+  .margin-bottom--@{margin-name} { margin-bottom: extract(extract(@margin-array, @margin-iterator),2) !important; }
+  .margin-left--@{margin-name} { margin-left: extract(extract(@margin-array, @margin-iterator),2) !important; }
+  .margin-top--@{margin-name} { margin-top: extract(extract(@margin-array, @margin-iterator),2) !important; }
+  .margin-horizontal--@{margin-name} { margin: 0 extract(extract(@margin-array, @margin-iterator),2) !important; }
+  .margin-vertical--@{margin-name} { margin: extract(extract(@margin-array, @margin-iterator),2) 0 !important; }
+  .margin-all--@{margin-name} { margin: extract(extract(@margin-array, @margin-iterator),2) !important; }
   
-  .creatmarginclasses((@iterator + 1));
+  .creatmarginclasses((@margin-iterator + 1));
 }
 
 // The end parenthesis means the mixin class itself will not be output

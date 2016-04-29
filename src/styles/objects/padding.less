@@ -9,12 +9,13 @@
 /* Padding vars
    ========================================================================== */
 
-@array: none 0,
-        @size-mod-xs 0.5em,
-        @size-mod-s 1em,
-        @size-mod-m 2em,
-        @size-mod-l 4em,
-        @size-mod-xl 8em;
+@padding-array:
+  none 0,
+  @size-mod-xs 0.5em,
+  @size-mod-s 1em,
+  @size-mod-m 2em,
+  @size-mod-l 4em,
+  @size-mod-xl 8em;
 
 /* Generate padding
    ========================================================================== */
@@ -23,18 +24,18 @@
  * Auto generate padding selectors
  */
 
-.creatpaddingclasses(@iterator:1) when(@iterator <= length(@array)) {
-  @name: extract(extract(@array, @iterator),1);
+.creatpaddingclasses(@padding-iterator:1) when(@padding-iterator <= length(@padding-array)) {
+  @padding-name: extract(extract(@padding-array, @padding-iterator),1);
 
-  .padding-right--@{name} { margin-right: extract(extract(@array, @iterator),2) !important; }
-  .padding-bottom--@{name} { margin-bottom: extract(extract(@array, @iterator),2) !important; }
-  .padding-left--@{name} { margin-left: extract(extract(@array, @iterator),2) !important; }
-  .padding-top--@{name} { margin-top: extract(extract(@array, @iterator),2) !important; }
-  .padding-horizontal--@{name} { margin: 0 extract(extract(@array, @iterator),2) !important; }
-  .padding-vertical--@{name} { margin: extract(extract(@array, @iterator),2) 0 !important; }
-  .padding-all--@{name} { margin: extract(extract(@array, @iterator),2) !important; }
+  .padding-right--@{padding-name} { margin-right: extract(extract(@padding-array, @padding-iterator),2) !important; }
+  .padding-bottom--@{padding-name} { margin-bottom: extract(extract(@padding-array, @padding-iterator),2) !important; }
+  .padding-left--@{padding-name} { margin-left: extract(extract(@padding-array, @padding-iterator),2) !important; }
+  .padding-top--@{padding-name} { margin-top: extract(extract(@padding-array, @padding-iterator),2) !important; }
+  .padding-horizontal--@{padding-name} { margin: 0 extract(extract(@padding-array, @padding-iterator),2) !important; }
+  .padding-vertical--@{padding-name} { margin: extract(extract(@padding-array, @padding-iterator),2) 0 !important; }
+  .padding-all--@{padding-name} { margin: extract(extract(@padding-array, @padding-iterator),2) !important; }
 
-  .creatpaddingclasses((@iterator + 1));
+  .creatpaddingclasses((@padding-iterator + 1));
 }
 
 // The end parenthesis means the mixin class itself will not be output
