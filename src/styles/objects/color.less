@@ -27,9 +27,9 @@
 .creatcolourclasses(@color-iterator:1) when(@color-iterator <= length(@color-array)) {
   @color-name: extract(extract(@color-array, @color-iterator),1);
 
-  .color--@{color-name} { color: extract(extract(@color-array, @color-iterator),2); }
-  .background-color--@{color-name} { background-color: extract(extract(@color-array, @color-iterator),2); }
-  .border-color--@{color-name} { border-color: extract(extract(@color-array, @color-iterator),2); }
+  .o-color--@{color-name} { color: extract(extract(@color-array, @color-iterator),2); }
+  .o-bg-color--@{color-name} { background-color: extract(extract(@color-array, @color-iterator),2); }
+  .o-bdr-color--@{color-name} { border-color: extract(extract(@color-array, @color-iterator),2); }
 
   .creatcolourclasses((@color-iterator + 1));
 }

@@ -8,7 +8,7 @@
 
 // Usage:
 // .my-selector {
-//   .bp-more-than(@bp-s-max; {
+//   .m-bp-more-than(@bp-s-max; {
 //     width: 100%;
 //   });
 // }
@@ -16,20 +16,20 @@
 /* Less than (max-width)
    ========================================================================== */
 
-.bp-less-than(@bp, @rules) {
+.m-bp-less-than(@bp, @rules) {
   @media all and (max-width: @bp) { @rules(); }
 }
 
 /* More than (min-width)
    ========================================================================== */
 
-.bp-more-than(@bp, @rules) {
+.m-bp-more-than(@bp, @rules) {
   @media all and (min-width: @bp) { @rules(); }
 }
 
 /* Between (min-width and max-width)
    ========================================================================== */
 
-.bp-between(@bp-from, @bp-to, @rules) {
+.m-bp-between(@bp-from, @bp-to, @rules) {
   @media all and (min-width: @bp-from) and (max-width: @bp-to) { @rules(); }
 }
