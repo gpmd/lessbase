@@ -11,8 +11,8 @@
  *
  * Usage:
  *
- * <div class='valign'>
- *     <div class='valign__content--middle'>
+ * <div class='o-valign'>
+ *     <div class='o-valign__content--middle'>
  *         <!-- Content -->
  *     </div>
  * </div>
@@ -20,21 +20,10 @@
  * @note Parent element must have position relative
  */
 
-/* Mixins
-   ========================================================================== */
-
-.inline-block() {
-  display: inline-block !important;
-  *display: inline; // IE<8
-  zoom: 1; // IE<8
-  max-width: 100%;
-  vertical-align: middle;
-}
-
 /* Wrapper
    ========================================================================== */
 
-.valign {
+.o-valign {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -42,8 +31,8 @@
 
 /* Pseudo element to center on */
 
-.valign:before {
-  .inline-block;
+.o-valign:before {
+  .m-inline-block;
   content: '';
   height: 100%;
   vertical-align: middle;
@@ -55,8 +44,8 @@
 
 /* Content element */
 
-.valign__content--top {
-  .inline-block;
+.o-valign__content--top {
+  .m-inline-block;
   width: 100%;
   vertical-align: top;
 }
@@ -66,8 +55,8 @@
 
 /* Content element */
 
-.valign__content--middle {
-  .inline-block;
+.o-valign__content--middle {
+  .m-inline-block;
   width: 100%;
   vertical-align: middle;
 }
@@ -77,8 +66,8 @@
 
 /* Content element */
 
-.valign__content--bottom {
-  .inline-block;
+.o-valign__content--bottom {
+  .m-inline-block;
   width: 100%;
   vertical-align: bottom;
 }
