@@ -9,12 +9,13 @@
 /* Color vars
    ========================================================================== */
 
-@array: black @black,
-        white @white,
-        light-grey @grey-light,
-        medium-grey @grey-medium,
-        dark-grey @grey-dark,
-        darkest-grey @grey-darkest;
+@color-array:
+  black @black,
+  white @white,
+  light-grey @grey-light,
+  medium-grey @grey-medium,
+  dark-grey @grey-dark,
+  darkest-grey @grey-darkest;
 
 /* Generate colors
    ========================================================================== */
@@ -23,14 +24,14 @@
  * Auto generate color, background-color and border-color selectors
  */
 
-.creatcolourclasses(@iterator:1) when(@iterator <= length(@array)) {
-  @name: extract(extract(@array, @iterator),1);
+.creatcolourclasses(@color-iterator:1) when(@color-iterator <= length(@color-array)) {
+  @color-name: extract(extract(@color-array, @color-iterator),1);
 
-  .color--@{name} { color: extract(extract(@array, @iterator),2); }
-  .background-color--@{name} { background-color: extract(extract(@array, @iterator),2); }
-  .border-color--@{name} { border-color: extract(extract(@array, @iterator),2); }
+  .color--@{color-name} { color: extract(extract(@color-array, @color-iterator),2); }
+  .background-color--@{color-name} { background-color: extract(extract(@color-array, @color-iterator),2); }
+  .border-color--@{color-name} { border-color: extract(extract(@color-array, @color-iterator),2); }
 
-  .creatcolourclasses((@iterator + 1));
+  .creatcolourclasses((@color-iterator + 1));
 }
 
 // The end parenthesis means the mixin class itself will not be output

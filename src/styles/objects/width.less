@@ -9,18 +9,19 @@
 /* Width vars
    ========================================================================== */
 
-@array: one-twelfth @one-twelfth,
-        one-sixth @one-sixth,
-        one-quarter @one-quarter,
-        one-third @one-third,
-        five-twelfths @five-twelfths,
-        one-half @one-half,
-        seven-twelfths @seven-twelfths,
-        two-thirds @two-thirds,
-        three-quarters @three-quarters,
-        five-sixths @five-sixths,
-        eleven-twelfths @eleven-twelfths,
-        one-whole @one-whole;
+@width-array:
+  one-twelfth @one-twelfth,
+  one-sixth @one-sixth,
+  one-quarter @one-quarter,
+  one-third @one-third,
+  five-twelfths @five-twelfths,
+  one-half @one-half,
+  seven-twelfths @seven-twelfths,
+  two-thirds @two-thirds,
+  three-quarters @three-quarters,
+  five-sixths @five-sixths,
+  eleven-twelfths @eleven-twelfths,
+  one-whole @one-whole;
 
 /* Generate width
    ========================================================================== */
@@ -29,12 +30,12 @@
  * Auto generate width selectors
  */
 
-.creatwidthclasses(@iterator:1) when(@iterator <= length(@array)) {
-  @name: extract(extract(@array, @iterator),1);
+.creatwidthclasses(@width-iterator:1) when(@width-iterator <= length(@width-array)) {
+  @width-name: extract(extract(@width-array, @width-iterator),1);
 
-  .width--@{name} { opacity: extract(extract(@array, @iterator),2); }
+  .width--@{width-name} { opacity: extract(extract(@width-array, @width-iterator),2); }
 
-  .creatwidthclasses((@iterator + 1));
+  .creatwidthclasses((@width-iterator + 1));
 }
 
 // The end parenthesis means the mixin class itself will not be output
