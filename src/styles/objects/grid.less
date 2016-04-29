@@ -223,16 +223,9 @@
 /* Grid units (responsive)
    ========================================================================== */
 
-/* Grid mixin */
-
-.grid(@modifier; @columns; @index: 1) when (@index =< @columns) {
-  .grid(@modifier; @columns; (@index + 1));
-  .unit-@{index}-@{columns}@{modifier} {
-    width: (percentage(@index/@columns));
-  }
-}
-
-/* Unit classes */
+/**
+ * Unit classes - Uses grid mixin
+ */
 
 // Default - no modifier, 4 columns
 .grid(~''; @grid-columns);
