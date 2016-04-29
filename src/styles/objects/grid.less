@@ -234,12 +234,12 @@
 
 /* Unit classes */
 
-// Default - no modifier, 12 columns
-.grid(~''; 12);
+// Default - no modifier, 4 columns
+.grid(~''; @grid-columns);
 
 // Media query modifier overrides
-.bp-more-than(@small-screen-min; { .grid(--small; 12); });
-.bp-more-than(@medium-screen-min; { .grid(--medium; 12); });
-.bp-more-than(@large-screen-min; { .grid(--large; 12); });
-.bp-more-than(@super-large-screen-min; { .grid(--super-large; 12); });
-.bp-more-than(@super-large-screen-max; { .grid(--super-large-max; 12); });
+.bp-more-than(@bp-xs-min; { .grid('--@{size-mod-xs}'; @grid-columns); });
+.bp-more-than(@bp-s-min; { .grid('--@{size-mod-s}'; @grid-columns); });
+.bp-more-than(@bp-m-min; { .grid('--@{size-mod-m}'; @grid-columns); });
+.bp-more-than(@bp-l-min; { .grid('--@{size-mod-l}'; @grid-columns); });
+.bp-more-than(@bp-xl-min; { .grid('--@{size-mod-xl}'; @grid-columns); });
