@@ -10,11 +10,11 @@
  * Use modernizr to detect flexbox support
  *
  * Example usage:
- * <div class='o-grid o-grid--has-gutter'>
- *     <div class='o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l'></div>
- *     <div class='o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l'></div>
- *     <div class='o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l'></div>
- *     <div class='o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l'></div>
+ * <div class="o-grid o-grid--has-gutter">
+ *     <div class="o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l"></div>
+ *     <div class="o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l"></div>
+ *     <div class="o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l"></div>
+ *     <div class="o-grid__cell o-unit-4-4 o-unit-2-4--m o-unit-1-4--l"></div>
  * </div>
  */
 
@@ -230,8 +230,8 @@
 .m-grid(~''; @grid-columns);
 
 // Media query modifier overrides
-.m-bp-more-than(@bp-xs-min; { .m-grid('--@{size-mod-xs}'; @grid-columns); });
-.m-bp-more-than(@bp-s-min; { .m-grid('--@{size-mod-s}'; @grid-columns); });
-.m-bp-more-than(@bp-m-min; { .m-grid('--@{size-mod-m}'; @grid-columns); });
-.m-bp-more-than(@bp-l-min; { .m-grid('--@{size-mod-l}'; @grid-columns); });
-.m-bp-more-than(@bp-xl-min; { .m-grid('--@{size-mod-xl}'; @grid-columns); });
+.m-bp-more-than(@bp-xs-min; { .m-grid(~'--@{size-mod-xs}'; @grid-columns); });
+.m-bp-more-than(@bp-s-min; { .m-grid(~'--@{size-mod-s}'; @grid-columns); });
+.m-bp-more-than(@bp-m-min; { .m-grid(~'--@{size-mod-m}'; @grid-columns); });
+.m-bp-more-than(@bp-l-min; { .m-grid(~'--@{size-mod-l}'; @grid-columns); });
+.m-bp-more-than(@bp-xl-min; { .m-grid(~'--@{size-mod-xl}'; @grid-columns); });
